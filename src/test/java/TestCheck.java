@@ -41,9 +41,6 @@ public class TestCheck {
         assertEquals(400, r.getAktuellesGewicht());
     }
 
-    /**
-     * Teilaufgabe 3: Maximalgewicht darf nicht überschritten werden.
-     */
     @Test
     void testGrenzfallMaxGewicht() {
         System.out.println("[testGrenzfallMaxGewicht] start");
@@ -56,7 +53,7 @@ public class TestCheck {
         assertTrue(r.packe(b));
         boolean thirdPacked = r.packe(c);
         System.out.println("[testGrenzfallMaxGewicht] packe(c)=" + thirdPacked + ", aktuellesGewicht=" + r.getAktuellesGewicht());
-        assertFalse(thirdPacked); // überschreitet das Maximalgewicht
+        assertFalse(thirdPacked);
 
         assertEquals(500, r.getAktuellesGewicht());
     }
@@ -69,7 +66,7 @@ public class TestCheck {
         Gegenstand b = new Gegenstand(300);
 
         r.packe(a);
-        boolean packedB = r.packe(b); // geht nicht, nur 400 drin
+        boolean packedB = r.packe(b);
         System.out.println("[testLeerenUndWiederPacken] nach packe(a,b): packedB=" + packedB + ", gewicht=" + r.getAktuellesGewicht());
         assertEquals(400, r.getAktuellesGewicht());
 
@@ -91,7 +88,7 @@ public class TestCheck {
         Rucksack r = new Rucksack(500);
         boolean packedNull = r.packe(null);
         System.out.println("[testUngueltigeEingaben] packe(null)=" + packedNull);
-        assertFalse(packedNull); // null darf nicht gepackt werden
+        assertFalse(packedNull);
     }
 
     @Test
@@ -99,20 +96,12 @@ public class TestCheck {
         System.out.println("[testVieleGegenstaende] start");
         Rucksack r = new Rucksack(1000);
         for (int i = 0; i < 10; i++) {
-            assertTrue(r.packe(new Gegenstand(100))); // 10 * 100 = 1000 passen rein
+            assertTrue(r.packe(new Gegenstand(100)));
         }
         System.out.println("[testVieleGegenstaende] aktuellesGewicht=" + r.getAktuellesGewicht());
         assertEquals(1000, r.getAktuellesGewicht());
     }
 
-    /**
-     * Teilaufgabe 6: überprüft, ob die optimale Strategie wirklich das optimale Gewicht erreicht.
-     *
-     * Fallbeispiel:
-     * maxGewicht = 10
-     * Gegenstände: 6, 5, 5
-     * Optimal ist 5 + 5 = 10 (also genau das Maximalgewicht).
-     */
     @Test
     void testOptimalPackStrategieFindetOptimalesGewicht() {
         System.out.println("[testOptimalPackStrategieFindetOptimalesGewicht] start");

@@ -35,10 +35,8 @@ public class Rucksack {
 
         PackErgebnis ergebnis = strategie.packe(kandidaten, this.maxGewicht);
 
-        // Rucksack wird gemäss Ergebnis befüllt (ersetzt aktuellen Inhalt)
         this.inhalt.clear();
         for (Gegenstand g : ergebnis.getGegenstaende()) {
-            // Defensive: garantiert nie über maxGewicht (falls Strategie fehlerhaft ist)
             if (g != null && getAktuellesGewicht() + g.getGewicht() <= maxGewicht) {
                 this.inhalt.add(g);
             }

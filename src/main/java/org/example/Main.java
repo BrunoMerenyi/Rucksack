@@ -2,8 +2,6 @@ package org.example;
 
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
     public static void main(String[] args) {
@@ -17,7 +15,7 @@ public class Main {
 
         Rucksack rucksack = new Rucksack(1000);
 
-        System.out.println("Packe g1: " + rucksack.packe(g1))   ;
+        System.out.println("Packe g1: " + rucksack.packe(g1));
         System.out.println("Packe g2: " + rucksack.packe(g2));
         System.out.println("Aktuelles Gewicht: " + rucksack.getAktuellesGewicht());
 
@@ -26,7 +24,6 @@ public class Main {
         rucksack.leeren();
         System.out.println("Nach dem Leeren: " + rucksack.getAktuellesGewicht());
 
-        // Smarter Rucksack (packt mehrere auf einmal) – Vergleich von Strategien
         List<Gegenstand> kandidaten = List.of(
                 new Gegenstand(6, "A"),
                 new Gegenstand(5, "B"),

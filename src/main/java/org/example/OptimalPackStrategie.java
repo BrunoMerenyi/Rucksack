@@ -3,11 +3,6 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Optimal: findet eine Auswahl mit maximal möglichem Gesamtgewicht <= maxGewicht.
- *
- * Implementiert per dynamischer Programmierung (0/1-Knapsack, Ziel = Gewicht maximieren).
- */
 public class OptimalPackStrategie implements PackStrategie {
 
     @Override
@@ -38,7 +33,6 @@ public class OptimalPackStrategie implements PackStrategie {
             }
         }
 
-        // Rekonstruktion
         List<Gegenstand> chosen = new ArrayList<>();
         int cap = best;
         for (int i = n; i >= 1; i--) {
@@ -48,10 +42,8 @@ public class OptimalPackStrategie implements PackStrategie {
                 chosen.add(item);
                 cap -= w;
             }
-            // else: item nicht gewählt
         }
 
         return new PackErgebnis(chosen, best);
     }
 }
-

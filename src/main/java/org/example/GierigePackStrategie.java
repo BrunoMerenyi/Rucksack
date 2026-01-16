@@ -4,12 +4,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Heuristik: sortiert nach Gewicht absteigend und packt dann der Reihe nach,
- * solange es noch passt.
- *
- * Findet nicht immer die optimale Packung, ist aber sehr schnell.
- */
 public class GierigePackStrategie implements PackStrategie {
 
     @Override

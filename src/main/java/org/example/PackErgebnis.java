@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Ergebnis einer Packstrategie: welche Gegenstände gewählt wurden
- * und welche Summen daraus resultieren.
- */
 public class PackErgebnis {
 
     protected final List<Gegenstand> gegenstaende;
