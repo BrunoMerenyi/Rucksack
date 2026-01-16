@@ -1,8 +1,4 @@
-import org.example.Gegenstand;
-import org.example.GierigePackStrategie;
-import org.example.OptimalPackStrategie;
-import org.example.PackErgebnis;
-import org.example.Rucksack;
+import org.example.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -39,6 +35,21 @@ public class TestCheck {
 
         System.out.println("[testMehrereGleicheGewichte] aktuellesGewicht=" + r.getAktuellesGewicht());
         assertEquals(400, r.getAktuellesGewicht());
+    }
+
+    @Test
+    void testBerechneOptimalesGewicht() {
+        SmartRucksack b = new SmartRucksack(25);
+
+        List<Gegenstand> items = List.of(
+                new Gegenstand(9, "A"),
+                new Gegenstand(12, "B"),
+                new Gegenstand(7, "C")
+        );
+
+        b.packAll(items);
+
+        assertEquals(25, b.getAktuellesGewicht());
     }
 
     @Test
